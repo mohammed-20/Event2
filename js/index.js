@@ -4,6 +4,7 @@
 const btnR = document.getElementById('btn1');
 const paintMe = document.getElementById('pallete');
 const textinpt = document.getElementById('color');
+const audio = document.getElementById('audio1');
 
 
 const getRandomNumber  = (min, max) => {
@@ -28,9 +29,6 @@ const getRandomNumber  = (min, max) => {
     //     });
 
 
-    textinpt.addEventListener('changecolor', () => {
-        document.getElementById("pallete").style.backgroundColor = document.getElementById('color').value;
-        });
 
 
 let nIntervId;
@@ -38,17 +36,29 @@ btnR.addEventListener('mouseenter', () =>{
 nIntervId=setInterval(set, 200);
 });
 
-const set = () =>{
+const set = () => {
     let randomColor = getRandomNumber(0, colors.length-1);
         document.getElementById('pallete').style.backgroundColor = colors[randomColor];
         document.getElementById('color').value = colors[randomColor];
         document.getElementById('color').style.color = colors[randomColor]; 
         document.getElementById('color-text').style.color = colors[randomColor];
-        document.getElementById('btn1').style.backgroundColor =colors[randomColor];
-};
+        document.getElementById('btn1').style.backgroundColor = colors[randomColor];
+        document.getElementById('crazy').style.backgroundColor = colors[randomColor];
+        
+    };
 
 btnR.addEventListener('mouseleave', () =>{
     clearInterval(nIntervId);
 });
 
 
+textinpt.addEventListener('changecolor', () => {
+    document.getElementById("pallete").style.backgroundColor = document.getElementById('color').value;
+    });
+
+ btnR.addEventListener('mouseenter', () =>{
+     audio.play();
+ });
+ btnR.addEventListener('mouseleave', () =>{
+    audio.pause();
+})
