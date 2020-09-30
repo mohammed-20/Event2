@@ -16,12 +16,19 @@ const getRandomNumber  = (min, max) => {
       return result;
 };
 
-    // btnR.addEventListener('mouseenter' , () => {
-    //   let randomColor = getRandomNumber(0, colors.length-1);
-    //     document.getElementById('pallete').style.backgroundColor = colors[randomColor];
-    //     document.getElementById('color').value = colors[randomColor];
-    //     document.getElementById('color').style.color = colors[randomColor];
-    // });
+    btnR.addEventListener('click' , () => {
+      let randomColor = getRandomNumber(0, colors.length-1);
+        document.getElementById('pallete').style.backgroundColor = colors[randomColor];
+        document.getElementById('color').value = colors[randomColor];
+        document.getElementById('color').style.color = colors[randomColor];
+    });
+
+    function changecolor() {
+        document.getElementById("pallete").style.backgroundColor = document.getElementById('color').value;
+    };
+
+
+
 
     // btnR.addEventListener('mouseleave' , () => {
     //   let randomColor = getRandomNumber(0, colors.length-1);
@@ -33,45 +40,43 @@ const getRandomNumber  = (min, max) => {
 
 
 
-let nIntervId;
-btnR.addEventListener('mouseenter', () =>{
-nIntervId=setInterval(set, 200);
-});
+// let nIntervId;
+// btnR.addEventListener('mouseenter', () =>{
+// nIntervId=setInterval(set, 200);
+// });
 
-const set = () => {
-    let randomColor = getRandomNumber(0, colors.length-1);
-        document.getElementById('pallete').style.backgroundColor = colors[randomColor];
-        document.getElementById('color').value = colors[randomColor];
-        document.getElementById('color').style.color = colors[randomColor]; 
-        document.getElementById('color-text').style.color = colors[randomColor];
-        document.getElementById('btn1').style.backgroundColor = colors[randomColor];
-        document.getElementById('crazy').style.backgroundColor = colors[randomColor];
+// const set = () => {
+//     let randomColor = getRandomNumber(0, colors.length-1);
+//         document.getElementById('pallete').style.backgroundColor = colors[randomColor];
+//         document.getElementById('color').value = colors[randomColor];
+//         document.getElementById('color').style.color = colors[randomColor]; 
+//         document.getElementById('color-text').style.color = colors[randomColor];
+//         document.getElementById('btn1').style.backgroundColor = colors[randomColor];
+//         document.getElementById('crazy').style.backgroundColor = colors[randomColor];
         
-    };
+//     };
 
-btnR.addEventListener('mouseleave', () =>{
-    clearInterval(nIntervId);
-});
-
-
-function changecolor() {
-    document.getElementById("pallete").style.backgroundColor = document.getElementById('color').value;
-};
+// btnR.addEventListener('mouseleave', () =>{
+//     clearInterval(nIntervId);
+// });
 
 
-btnR.addEventListener('mouseenter', () => {
-    audio.play();
+
+
+
+// btnR.addEventListener('mouseenter', () => {
+//     audio.play();
     
-});
+// });
 
-window.addEventListener('keydown', (key) => {
-    if (key.keyCode == '39') {
-        audio.volume += 0.05;
-    }
-    else if (key.keyCode == '37') {
-       audio.volume -= 0.05;
-    }
-});
- btnR.addEventListener('mouseleave', () =>{
-    audio.pause();
-});
+// window.addEventListener('keydown', (key) => {
+//     if (key.keyCode == '39') {
+//         audio.volume += 0.05;
+//     }
+//     else if (key.keyCode == '37') {
+//        audio.volume -= 0.05;
+//     }
+// });
+//  btnR.addEventListener('mouseleave', () =>{
+//     audio.pause();
+// });
