@@ -66,10 +66,10 @@ btnR.addEventListener('mouseenter', () => {
 
 window.addEventListener('keydown', (key) => {
     if (key.keyCode == '39') {
-        audio.volume += 0.1;
+        audio.volume += (0.1);
     }
     else if (key.keyCode == '37') {
-       audio.volume -= 0.1;
+       audio.volume -= (0.1);
     }
 });
  btnR.addEventListener('mouseleave', () =>{
