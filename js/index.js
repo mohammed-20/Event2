@@ -5,6 +5,8 @@ const btnR = document.getElementById('btn1');
 const paintMe = document.getElementById('pallete');
 const textinpt = document.getElementById('color');
 const audio = document.getElementById('audio1');
+const volume = document.getElementById('audio1');
+
 
 
 const getRandomNumber  = (min, max) => {
@@ -52,13 +54,24 @@ btnR.addEventListener('mouseleave', () =>{
 });
 
 
-textinpt.addEventListener('changecolor', () => {
+function changecolor() {
     document.getElementById("pallete").style.backgroundColor = document.getElementById('color').value;
-    });
+};
 
- btnR.addEventListener('mouseenter', () =>{
-     audio.play();
- });
+
+btnR.addEventListener('mouseenter', () => {
+    audio.play();
+    
+});
+
+window.addEventListener('keydown', (key) => {
+    if (key.keyCode == '39') {
+        audio.volume += 0.05;
+    }
+    else if (key.keyCode == '37') {
+       audio.volume -= 0.05;
+    }
+});
  btnR.addEventListener('mouseleave', () =>{
     audio.pause();
-})
+});
